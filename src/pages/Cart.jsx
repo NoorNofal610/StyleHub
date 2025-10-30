@@ -25,14 +25,14 @@ export default function Cart({ cartItems, onRemoveCartItem, onQuantityChange, se
   };
 
   const completeOrder = () => {
-    // مسح جميع العناصر من الـ cart
+    //empty cart
     setCartItems([]);
-    // إظهار رسالة التهنئة
+    //congrats
     setOrderCompleted(true);
   };
 
   if (orderCompleted) {
-    // صفحة التهنئة بعد الدفع
+    // congrats
     return (
      <Box
   sx={{
@@ -77,7 +77,7 @@ export default function Cart({ cartItems, onRemoveCartItem, onQuantityChange, se
     <Box sx={{ background: '#F8EDEE', minHeight: '100vh', py: 5 }}>
       <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 3 }}>
         
-        {/* Cart Items */}
+        {/* cart items */}
         <Box sx={{ flex: 2 }}>
           <Typography variant="h4" fontWeight="bold" mb={4} textAlign="center">🛒 Your Cart</Typography>
           {cartItems.length === 0 ? (
@@ -96,7 +96,7 @@ export default function Cart({ cartItems, onRemoveCartItem, onQuantityChange, se
           )}
         </Box>
 
-        {/* Checkout Box */}
+        {/* checkout box */}
         {cartItems.length > 0 && (
           <Box sx={{ flex: 1, position: { md: 'sticky' }, top: { md: 100 }, alignSelf: 'flex-start' }}>
             <Paper sx={{ p: 3, borderRadius: 2, boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
@@ -131,7 +131,7 @@ export default function Cart({ cartItems, onRemoveCartItem, onQuantityChange, se
         )}
       </Container>
 
-      {/* Visa Modal */}
+      {/* visa  */}
       <Modal open={visaModalOpen} onClose={() => setVisaModalOpen(false)}>
         <Box sx={{
           position: 'absolute',

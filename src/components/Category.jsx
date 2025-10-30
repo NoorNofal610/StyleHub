@@ -14,10 +14,10 @@ export default function Category() {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  const isXs = useMediaQuery(theme.breakpoints.down("sm")); // موبايل
-  const isSm = useMediaQuery(theme.breakpoints.between("sm", "md")); // تابلت
+  const isXs = useMediaQuery(theme.breakpoints.down("sm")); // mobile
+  const isSm = useMediaQuery(theme.breakpoints.between("sm", "md")); //tab
 
-  let cols = 3; // ديسكتوب
+  let cols = 3; //desk
   if (isXs) cols = 1;
   else if (isSm) cols = 2;
 

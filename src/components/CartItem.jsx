@@ -12,8 +12,8 @@ export default function CartItem({ product, onRemove, onQuantityChange }) {
         alignItems: 'center',
         transition: 'transform 0.3s, box-shadow 0.3s',
         '&:hover': {
-          transform: 'translateY(-5px)', // تحريك العنصر لأعلى
-          boxShadow: '0 8px 20px rgba(0,0,0,0.2)', // إضافة ظل عند hover
+          transform: 'translateY(-5px)',
+          boxShadow: '0 8px 20px rgba(0,0,0,0.2)', 
         },
       }}
     >

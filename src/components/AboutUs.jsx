@@ -18,7 +18,7 @@ function AboutUs() {
         gap: 4,
       }}
     >
-      {/* الصورة على اليسار */}
+      {/* img*/}
       <Box
         component="img"
         src="/images/bag2.JPG"
@@ -32,7 +32,7 @@ function AboutUs() {
         }}
       />
 
-      {/* النصوص على اليمين */}
+      {/* text*/}
       <Box sx={{ width: { xs: '100%', md: '50%' }, textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant="h3" gutterBottom fontWeight="bold">
           About Us
@@ -63,7 +63,6 @@ function AboutUs() {
         </Button>
       </Box>
 
-      {/* Modal موسع مع صورة خلفية */}
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -73,19 +72,19 @@ function AboutUs() {
           sx={{
             width: { xs: '90%', md: 700 },
             maxHeight: '90vh',
-            bgcolor: 'rgba(255,255,255,0.9)', // خلفية شفافة قليلاً
+            bgcolor: 'rgba(255,255,255,0.9)', 
             borderRadius: 3,
             p: 4,
             position: 'relative',
             boxShadow: 24,
             overflowY: 'auto',
-            backgroundImage: 'url(/images/about-bg2.JPG)', // صورة الخلفية
+            backgroundImage: 'url(/images/about-bg2.JPG)', 
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             color: '#fff',
           }}
         >
-          {/* زر الإغلاق */}
+          {/* close button*/}
           <IconButton
             onClick={() => setOpen(false)}
             sx={{ position: 'absolute', top: 8, right: 8, color: '#fff' }}

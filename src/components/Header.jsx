@@ -62,7 +62,7 @@ export default function Header() {
               position: 'relative',
             }}
           >
-            {/* خلفية بيضاء خلف الصورة */}
+            {/* white bg*/}
             <Box
               sx={{
                 position: 'absolute',

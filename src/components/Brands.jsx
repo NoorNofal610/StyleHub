@@ -1,13 +1,11 @@
 import React from "react";
 import { Box, Typography, keyframes } from "@mui/material";
 
-// 🔁 حركة مستمرة لا نهائية
 const scroll = keyframes`
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 `;
 
-// 🏷️ أسماء البراندات + خطوط متنوعة
 const brands = [
   { name: "GUCCI", fontFamily: "'Playfair Display', serif" },
   { name: "ZARA", fontFamily: "'Montserrat', sans-serif" },
@@ -30,7 +28,7 @@ export default function Brands() {
         position: "relative",
       }}
     >
-      {/* الحاوية العامة */}
+      {/* main container*/}
       <Box
         sx={{
           display: "flex",
@@ -38,7 +36,7 @@ export default function Brands() {
           animation: `${scroll} 25s linear infinite`,
         }}
       >
-        {/* نكرر النص مرتين متتاليتين لعمل التمرير المستمر */}
+        {/*2 times*/}
         {[...brands, ...brands].map((brand, index) => (
           <Typography
             key={index}

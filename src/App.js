@@ -11,7 +11,7 @@ export default function App() {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
 
-  // إضافة/إزالة من الفيفوريت
+  //add/delete from favorit
   const handleToggleFavorite = (product) => {
     setFavoriteItems(prev => 
       prev.find(p => p.id === product.id) 
@@ -20,12 +20,12 @@ export default function App() {
     );
   };
 
-  // إضافة للسلة
+  // add to cart
   const handleAddToCart = (product) => {
     setCartItems(prev => {
       const existingIndex = prev.findIndex(p => p.id === product.id && p.size === product.size);
       if (existingIndex !== -1) {
-        // زيادة الكمية إذا موجود مسبقًا بنفس الحجم
+        // increse quantity
         const updatedCart = [...prev];
         updatedCart[existingIndex].quantity += product.quantity;
         return updatedCart;
@@ -35,12 +35,12 @@ export default function App() {
     });
   };
 
-  // إزالة عنصر من السلة
+  // delete comp from cart
   const handleRemoveCartItem = (product) => {
     setCartItems(prev => prev.filter(p => !(p.id === product.id && p.size === product.size)));
   };
 
-  // تعديل كمية عنصر في السلة
+  // component quantity in cart
   const handleQuantityChange = (id, size, newQuantity) => {
     setCartItems(prev =>
       prev.map(p => 

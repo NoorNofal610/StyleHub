@@ -31,7 +31,7 @@ export default function ProductDetail({ onAddToCart, onToggleFavorite, favoriteI
   if (loading) return <CircularProgress sx={{ display: 'block', mx: 'auto', mt: 10 }} />;
   if (!product) return <Typography textAlign="center" mt={5}>Product not found</Typography>;
 
-  // تحديد نوع المنتج بشكل موثوق: category إذا موجودة، وإلا الاسم
+  // category type
   const getProductType = (product) => {
     if (product.category) {
       const cat = product.category.toLowerCase();

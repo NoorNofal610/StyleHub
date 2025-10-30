@@ -1,4 +1,3 @@
-// src/components/SearchMenu.jsx
 import React from 'react';
 import { Box, Menu, TextField, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
