@@ -1,29 +1,13 @@
-import { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import { useContext, useRef } from 'react';
+import { ProductsContext } from '../context/ProductsContext';
 import { Box, Typography, IconButton, CircularProgress } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ProductCard from './ProductCard';
 
 export default function WhatsNew({ favoriteItems, onToggleFavorite }) {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { products, loading } = useContext(ProductsContext);
   const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const womenDress = await axios.get("https://dummyjson.com/products/category/womens-dresses");
-        const womenBags = await axios.get("https://dummyjson.com/products/category/womens-bags");
-        setProducts([...womenDress.data.products, ...womenBags.data.products]);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -32,6 +16,8 @@ export default function WhatsNew({ favoriteItems, onToggleFavorite }) {
   };
 
   if (loading) return <CircularProgress sx={{ display: 'block', mx: 'auto', mt: 10 }} />;
+
+  const whatsNewProducts = [...products.clothes, ...products.bags];
 
   return (
     <Box padding={3} position="relative">
@@ -45,7 +31,7 @@ export default function WhatsNew({ favoriteItems, onToggleFavorite }) {
       </IconButton>
 
       <Box ref={scrollRef} sx={{ display: 'flex', overflowX: 'auto', gap: 2, py: 2 }}>
-        {products.map(product => (
+        {whatsNewProducts.map(product => (
           <ProductCard
             key={product.id}
             product={product}

@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useContext, useEffect } from 'react';
+import { ProductsContext } from '../context/ProductsContext';
 import { Box, Typography, CircularProgress, Grid, Tabs, Tab } from '@mui/material';
 import ProductCard from '../components/ProductCard';
 import { useLocation } from 'react-router-dom';
 
 export default function Shop({ favoriteItems, onToggleFavorite }) {
+  const { products, loading } = useContext(ProductsContext);
   const location = useLocation();
   const [section, setSection] = useState('clothes');
-  const [products, setProducts] = useState({ clothes: [], bags: [], shoes: [] });
-  const [loading, setLoading] = useState(true);
 
   const handleChange = (event, newValue) => setSection(newValue);
 
@@ -17,32 +16,6 @@ export default function Shop({ favoriteItems, onToggleFavorite }) {
     const sec = params.get('section');
     if (sec && ['clothes', 'bags', 'shoes'].includes(sec)) setSection(sec);
   }, [location.search]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const [clothesRes, bagsRes, shoesRes] = await Promise.all([
-          axios.get('https://dummyjson.com/products/category/womens-dresses'),
-          axios.get('https://dummyjson.com/products/category/womens-bags'),
-          axios.get('https://dummyjson.com/products/category/mens-shoes'),
-        ]);
-
-        setProducts({
-          clothes: clothesRes.data.products,
-          bags: bagsRes.data.products,
-          shoes: shoesRes.data.products,
-        });
-
-        setLoading(false);
-      } catch (err) {
-        console.error(err);
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
 
   if (loading) return <CircularProgress sx={{ display: 'block', mx: 'auto', mt: 10 }} />;
 
