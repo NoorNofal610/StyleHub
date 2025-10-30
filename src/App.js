@@ -6,6 +6,9 @@ import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import Login from './components/Login';
 
+import Cart from './pages/Cart';
+
+
 export default function App() {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [cartItems, setCartItems] = useState([]);
@@ -54,8 +57,22 @@ export default function App() {
             />
           } 
         />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        {/* <Route path="/product/:id" element={<ProductDetail />} /> */}
         <Route path="/login" element={<Login />} />
+        {/**cart */}
+        <Route 
+  path="/product/:id" 
+  element={
+    <ProductDetail 
+      onAddToCart={handleAddToCart} 
+    />
+  } 
+/>
+  <Route 
+    path="/cart" 
+    element={<Cart cartItems={cartItems} onRemoveCartItem={handleRemoveCartItem} />} 
+  />
+
       </Routes>
     </BrowserRouter>
   );
