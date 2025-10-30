@@ -80,7 +80,7 @@ export default function Footer() {
             Contact Us
           </Typography>
           <Typography variant="body2" sx={{ color: "#bbb" }}>
-            📍 Nablus, Palestine
+            📍 Tulkarm, Palestine
           </Typography>
           <Typography variant="body2" sx={{ color: "#bbb" }}>
             📧 support@mystore.com
@@ -91,47 +91,67 @@ export default function Footer() {
 
           {/* social media*/}
           <Stack direction="row" spacing={1.5} sx={{ mt: 2 }}>
-            <IconButton
-              color="inherit"
-              size="small"
-              sx={{
-                backgroundColor: "rgba(255,255,255,0.1)",
-                "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
-              }}
-            >
-              <Facebook />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              size="small"
-              sx={{
-                backgroundColor: "rgba(255,255,255,0.1)",
-                "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
-              }}
-            >
-              <Instagram />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              size="small"
-              sx={{
-                backgroundColor: "rgba(255,255,255,0.1)",
-                "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
-              }}
-            >
-              <Twitter />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              size="small"
-              sx={{
-                backgroundColor: "rgba(255,255,255,0.1)",
-                "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
-              }}
-            >
-              <YouTube />
-            </IconButton>
-          </Stack>
+  <IconButton
+    component="a"
+    href="https://www.facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    color="inherit"
+    size="small"
+    sx={{
+      backgroundColor: "rgba(255,255,255,0.1)",
+      "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
+    }}
+  >
+    <Facebook />
+  </IconButton>
+
+  <IconButton
+    component="a"
+    href="https://www.instagram.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    color="inherit"
+    size="small"
+    sx={{
+      backgroundColor: "rgba(255,255,255,0.1)",
+      "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
+    }}
+  >
+    <Instagram />
+  </IconButton>
+
+  <IconButton
+    component="a"
+    href="https://www.twitter.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    color="inherit"
+    size="small"
+    sx={{
+      backgroundColor: "rgba(255,255,255,0.1)",
+      "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
+    }}
+  >
+    <Twitter />
+  </IconButton>
+
+  <IconButton
+    component="a"
+    href="https://www.youtube.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    color="inherit"
+    size="small"
+    sx={{
+      backgroundColor: "rgba(255,255,255,0.1)",
+      "&:hover": { backgroundColor: "#FDC65B", color: "#000" },
+    }}
+  >
+    <YouTube />
+  </IconButton>
+</Stack>
+
         </Box>
       </Stack>
 

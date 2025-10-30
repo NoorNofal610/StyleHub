@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -32,20 +33,23 @@ export default function Header() {
             <Typography variant="body1" sx={{ color: '#555', lineHeight: 1.6 }}>
               We create personalities, not just stitched fabric.
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                mt: 4,
-                backgroundColor: '#FDC65B',
-                color: '#fff',
-                px: 4,
-                py: 1.5,
-                fontWeight: 'bold',
-                '&:hover': { backgroundColor: '#e6b14d' },
-              }}
-            >
-              Shop Now
-            </Button>
+           
+<Button
+  component={RouterLink}
+  to="/shop"
+  variant="contained"
+  sx={{
+    mt: 4,
+    backgroundColor: '#FDC65B',
+    color: '#fff',
+    px: 4,
+    py: 1.5,
+    fontWeight: 'bold',
+    '&:hover': { backgroundColor: '#e6b14d' },
+  }}
+>
+  Shop Now
+</Button>
           </Box>
 
           {/* Image Section */}
